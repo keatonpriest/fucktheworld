@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Contrail+One&family=Roboto&family=Spinnaker&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+@keyframes zoomOutMore {
+    from {
+        background-size: 150% auto;
+    }
+    to {
+        background-size: 100% auto;
+    }
+}
+
+
+
+body {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: rgb(91, 71, 51);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100vh;
+    background-color: rgb(234, 223, 222);
+}
+
+h1 {
+    font-family: 'Spinnaker', sans-serif;
+    font-size: 30px;
+    text-transform: lowercase;
+    background: linear-gradient(185deg, rgba(69, 69, 69, 0.682), rgb(64, 61, 61));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+h3 {
+    font-size: 15px;
+    padding: auto;
+}
+
+.container {
+    align-items: stretch;
+    justify-content: center;
+    display: flex;
+    height: 90vh;
+    width: 70vw;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.panel  {
+    
+    height: 5vh;
+    width: 100%;
+    margin: 0 auto;
+    background-size: 120% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border-radius: 10px;
+    text-align: right;
+    flex-direction: column;
+    flex: .5;
+    border: 5px rgba(119, 123, 118, 0.373) solid;
+    box-shadow: 0 0 75px rgba(0, 0, 0, 0.832);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.5, 1);
+
+}
+
+.panel.active {
+    box-shadow: 0 0 200px rgba(0, 0, 0, 0.832);
+    flex: 6;
+    height: 70vh;
+    background-size: 100% auto;
+    background-color: rgba(31, 29, 26, 0.692);
+    border-color: rgba(26, 26, 26, 0.671);
+    cursor: default;
+    animation: zoomOutMore 0.5s ease-in; 
+}
+
+@media screen and (max-width: 700px) {
+    
+    .panel h3 {
+        width: 100%;
+        margin: 0;
+        padding: 5px;
+        font-size: 12px;
+    }
+    
+    .panel.active {
+        height: 60vh;
+    }
+}
